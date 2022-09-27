@@ -1,9 +1,6 @@
 package baseball.number;
 
-import baseball.score.Ball;
-import baseball.score.NoneScore;
-import baseball.score.Score;
-import baseball.score.Strike;
+import baseball.score.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -43,9 +40,9 @@ public class InputTest {
         Results results = new Results("123");
 
         Input input = new Input(1, 1);
-        Score score = input.match(results);
+        ScoreEnum scoreEnum = input.match(results);
 
-        assertThat(score).isInstanceOf(Ball.class);
+        assertThat(scoreEnum).isEqualTo(ScoreEnum.BALL);
     }
 
     @DisplayName("strike 출력")
@@ -54,9 +51,9 @@ public class InputTest {
         Results results = new Results("123");
 
         Input input = new Input(0, 1);
-        Score score = input.match(results);
+        ScoreEnum scoreEnum = input.match(results);
 
-        assertThat(score).isInstanceOf(Strike.class);
+        assertThat(scoreEnum).isEqualTo(ScoreEnum.STRIKE);
     }
 
     @DisplayName("noneScore 출력")
@@ -65,8 +62,8 @@ public class InputTest {
         Results results = new Results("123");
 
         Input input = new Input(0, 7);
-        Score score = input.match(results);
+        ScoreEnum scoreEnum = input.match(results);
 
-        assertThat(score).isInstanceOf(NoneScore.class);
+        assertThat(scoreEnum).isEqualTo(ScoreEnum.NONE);
     }
 }

@@ -3,6 +3,7 @@ package baseball.number;
 import baseball.score.Ball;
 import baseball.score.NoneScore;
 import baseball.score.Score;
+import baseball.score.ScoreEnum;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -44,12 +45,12 @@ public class InputsTest {
         Results results = new Results("123");
 
         Inputs inputs = new Inputs("234");
-        List<Score> scores = inputs.match(results);
+        List<ScoreEnum> match = inputs.match(results);
 
         assertAll(
-                () -> assertThat(scores.get(0)).isInstanceOf(Ball.class),
-                () -> assertThat(scores.get(1)).isInstanceOf(Ball.class),
-                () -> assertThat(scores.get(2)).isInstanceOf(NoneScore.class)
+                () -> assertThat(match.get(0)).isEqualTo(ScoreEnum.BALL),
+                () -> assertThat(match.get(1)).isEqualTo(ScoreEnum.BALL),
+                () -> assertThat(match.get(2)).isEqualTo(ScoreEnum.NONE)
         );
     }
 }

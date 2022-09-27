@@ -2,6 +2,7 @@ package baseball.number;
 
 import baseball.number.Input;
 import baseball.score.Score;
+import baseball.score.ScoreEnum;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,8 +24,8 @@ public class Inputs {
         }
     }
 
-    public List<Score> match(Results results) {
-        List<Score> scores = new ArrayList<>();
+    public List<ScoreEnum> match(Results results) {
+        List<ScoreEnum> scores = new ArrayList<>();
         for (Input input : inputs) {
             scores.add(input.match(results));
         }

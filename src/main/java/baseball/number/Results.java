@@ -22,7 +22,7 @@ public class Results {
         this.resultList = resultList;
     }
 
-    private List<Result> initial() {
+    private List<Result> initial() { // FIXME 같은 숫자가 중복해서 나올 수 있으므로 해당 내용 수정 필요
         return IntStream.range(0, 3).mapToObj(index -> new Result()).collect(Collectors.toList()); // FIXME Stream 대신 for 사용!
     }
 

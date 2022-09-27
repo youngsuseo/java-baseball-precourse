@@ -8,13 +8,14 @@ import java.util.List;
 import java.util.Map;
 
 public class NumberMatcher {
-    private static final Map<Score, Integer> MATCHED_RESULTS = new HashMap<Score, Integer>() {
+    // FIXME 또한 공유 문제가 있어 테스트 할때마다 데이터를 지우고 수행해야한다.
+    private static final Map<ScoreEnum, Integer> MATCHED_RESULTS = new HashMap<ScoreEnum, Integer>() {
         {
-            put(new Strike(), 0); // FIXME s class 대신 enum을 사용할지 고민 필요
-            put(new Ball(), 0);
-            put(new NoneScore(), 0);
+            put(ScoreEnum.STRIKE, 0); // FIXME s class 대신 enum을 사용할지 고민 필요
+            put(ScoreEnum.BALL, 0);
+            put(ScoreEnum.NONE, 0);
         }
-    };
+    }; // FIXME enum을 사용할거라면 EnumMap 사용 고려
 
     private final Results results;
     private final Inputs inputs;
@@ -24,13 +25,13 @@ public class NumberMatcher {
         this.inputs = inputs;
     }
 
-    public List<Score> match() { // FIXME 필요없으면 삭제
+    public List<ScoreEnum> match() { // FIXME 필요없으면 삭제
         return inputs.match(results);
     }
 
-    public Map<Score, Integer> matchedResult() {
-        List<Score> match = inputs.match(results);
-        for (Score score : match) {
+    public Map<ScoreEnum, Integer> matchedResult() {
+        List<ScoreEnum> match = inputs.match(results);
+        for (ScoreEnum score : match) {
             MATCHED_RESULTS.merge(score, 1, Integer::sum);
         }
         return MATCHED_RESULTS;

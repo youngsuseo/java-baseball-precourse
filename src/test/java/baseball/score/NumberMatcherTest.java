@@ -20,12 +20,12 @@ public class NumberMatcherTest {
         Inputs inputs = new Inputs("243");
 
         NumberMatcher numberMatcher = new NumberMatcher(results, inputs);
-        List<Score> scores = numberMatcher.match();
+        List<ScoreEnum> match = numberMatcher.match();
 
         assertAll(
-                () -> assertThat(scores.get(0)).isInstanceOf(Ball.class),
-                () -> assertThat(scores.get(1)).isInstanceOf(NoneScore.class),
-                () -> assertThat(scores.get(2)).isInstanceOf(Strike.class)
+                () -> assertThat(match.get(0)).isEqualTo(ScoreEnum.BALL),
+                () -> assertThat(match.get(1)).isEqualTo(ScoreEnum.NONE),
+                () -> assertThat(match.get(2)).isEqualTo(ScoreEnum.STRIKE)
         );
     }
 
@@ -36,12 +36,12 @@ public class NumberMatcherTest {
         Inputs inputs = new Inputs("243");
 
         NumberMatcher numberMatcher = new NumberMatcher(results, inputs);
-        Map<Score, Integer> scoreIntegerMap = numberMatcher.matchedResult();
+        Map<ScoreEnum, Integer> scoreEnumIntegerMap = numberMatcher.matchedResult();
 
         assertAll(
-                () -> assertThat(scoreIntegerMap.get(new Strike())).isEqualTo(1),
-                () -> assertThat(scoreIntegerMap.get(new Ball())).isEqualTo(1),
-                () -> assertThat(scoreIntegerMap.get(new NoneScore())).isEqualTo(1)
+                () -> assertThat(scoreEnumIntegerMap.get(ScoreEnum.STRIKE)).isEqualTo(1),
+                () -> assertThat(scoreEnumIntegerMap.get(ScoreEnum.BALL)).isEqualTo(1),
+                () -> assertThat(scoreEnumIntegerMap.get(ScoreEnum.NONE)).isEqualTo(1)
         );
     }
 }

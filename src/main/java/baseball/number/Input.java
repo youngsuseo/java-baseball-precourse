@@ -1,9 +1,6 @@
 package baseball.number;
 
-import baseball.score.Ball;
-import baseball.score.NoneScore;
-import baseball.score.Score;
-import baseball.score.Strike;
+import baseball.score.*;
 
 import java.util.List;
 import java.util.Objects;
@@ -24,22 +21,22 @@ public class Input {
         this.inputNumber = inputNumber;
     }
 
-    public Score match(Results results) {
+    public ScoreEnum match(Results results) {
         List<Result> resultList = results.getResultList();
         // Strike인지 판단한다.
         if (resultList.get(inputIndex).equals(Result.getCachedResult(inputNumber))) {
-            return new Strike();
+            return ScoreEnum.STRIKE;
         }
 
         // Ball인지 판단한다.
         for (int i = 0; i < resultList.size(); i++) {
             if (resultList.get(i).equals(Result.getCachedResult(inputNumber))) {
-                return new Ball();
+                return ScoreEnum.BALL;
             }
         }
 
         // 아니면 None 리턴
-        return new NoneScore();
+        return ScoreEnum.NONE;
     }
 
     @Override
