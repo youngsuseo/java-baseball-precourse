@@ -30,7 +30,7 @@ public class Result {
 
     int initial() { // private로 변환
         Random random = new Random();
-        return random.nextInt(9); // 1~9까지 이므로 데이터 수정 필요
+        return random.nextInt(9); // 1~9까지 이므로 데이터 수정 필요, FIXME missionUtils사용건으로 변경
     }
 
     public static Result getCachedResult(int resultNumber) {

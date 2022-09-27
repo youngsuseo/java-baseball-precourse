@@ -10,7 +10,7 @@ public class Results {
 
     private final List<Result> resultList;
 
-    public Results() {
+    public Results() { // FIXME 혹시 필요하다면 정적 팩터리 메서드로 제공 : 랜덤 넘버 제공한다는 메서드 표기
         resultList = initial();
     }
 

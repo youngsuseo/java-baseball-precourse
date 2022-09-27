@@ -25,13 +25,10 @@ public class Inputs {
 
     public List<Score> match(Results results) {
         List<Score> scores = new ArrayList<>();
-        for (Result result : results.getResultList()) {
-//            result
-            // TODO 여기서부터 개발!!
+        for (Input input : inputs) {
+            scores.add(input.match(results));
         }
-
-
-        return null;
+        return scores;
     }
 
     public List<Input> getInputs() { // FIXME 우선 getter 생성하고 추후 사용하지 않으면 제거
