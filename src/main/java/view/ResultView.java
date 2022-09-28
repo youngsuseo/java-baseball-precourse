@@ -22,10 +22,11 @@ public class ResultView {
             stringBuilder.append(scoreEnumIntegerMap.get(ScoreEnum.STRIKE)).append("스트라이크");
         }
 
+        // TODO 출력 결과 추가, 랜덤값 중복되지 않도록!!!
         System.out.println(stringBuilder);
     }
 
     public static void printDone() {
-        System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임종료");
+        System.out.println("3개의 숫자를 모두 맞히셨습니다!");
     }
 }

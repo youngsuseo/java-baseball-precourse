@@ -14,12 +14,12 @@ public class ResultTest {
         assertThat(result).isNotNull();
     }
 
-    @DisplayName("Result를 가지는 숫자들을 랜덤으로 생성한다. -> ")
-    @Test
-    void initial() {
-        Result result = new Result();
-        int initial = result.initial();
-        System.out.println("initial = " + initial);
-        assertThat(initial).isLessThan(10);
-    }
+//    @DisplayName("Result를 가지는 숫자들을 랜덤으로 생성한다. -> ")
+//    @Test
+//    void initial() {
+//        Result result = new Result();
+//        int initial = result.initial();
+//        System.out.println("initial = " + initial);
+//        assertThat(initial).isLessThan(10);
+//    }
 }

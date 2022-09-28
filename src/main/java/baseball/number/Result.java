@@ -1,5 +1,7 @@
 package baseball.number;
 
+import camp.nextstep.edu.missionutils.Randoms;
+
 import java.io.InputStream;
 import java.util.*;
 
@@ -28,9 +30,8 @@ public class Result {
         this.resultNumber = resultNumber;
     }
 
-    int initial() { // private로 변환
-        Random random = new Random();
-        return random.nextInt(9); // 1~9까지 이므로 데이터 수정 필요, FIXME missionUtils사용건으로 변경
+    private int initial() {
+        return Randoms.pickNumberInRange(1, 9);
     }
 
     public static Result getCachedResult(int resultNumber) {
