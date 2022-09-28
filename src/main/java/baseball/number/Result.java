@@ -2,7 +2,6 @@ package baseball.number;
 
 import camp.nextstep.edu.missionutils.Randoms;
 
-import java.io.InputStream;
 import java.util.*;
 
 public class Result {
@@ -18,7 +17,7 @@ public class Result {
     public int resultNumber;
 
     public Result() {
-        // FIXME initial 호출해서 데이터 출력할 수 있도록
+        // FIXME initial 호출해서 데이터 출력할 수 있도록 -> Result에서는 랜덤값을 만들지 않도록
         resultNumber = initial();
     }
 
@@ -31,7 +30,8 @@ public class Result {
     }
 
     private int initial() {
-        return Randoms.pickNumberInRange(1, 9); // TODO pickNumberInList를 사용하는것이 나을지? 아니면 pickNumberInRange를 사용하는 것이 좋은지 고민!
+        // FIXME random값 추출할 때 중복된 값 추출되지 않도록 -> Result에서는 랜덤값을 만들지 않도록
+        return Randoms.pickNumberInRange(1, 9);
     }
 
     public static Result getCachedResult(int resultNumber) {

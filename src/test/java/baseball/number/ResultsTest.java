@@ -13,4 +13,12 @@ public class ResultsTest {
         Results results = new Results();
         assertThat(results.getResultList()).hasSize(3);
     }
+
+    @DisplayName("result 객체 생성을 성공한다.")
+    @Test
+    void construct1() {
+        Results results = new Results(new ExtractRandomNumberByShuffleList());
+        assertThat(results.getResultList()).hasSize(3);
+    }
+
 }

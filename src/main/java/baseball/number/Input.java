@@ -7,7 +7,7 @@ import java.util.Objects;
 
 public class Input {
 
-    private final int inputIndex;
+    private final int inputIndex; // FIXME 원시값 포장
     private final int inputNumber;
 
     public Input(int inputIndex, String inputNumberString) {
