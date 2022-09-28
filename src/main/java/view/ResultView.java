@@ -12,6 +12,7 @@ public class ResultView {
 
     }
 
+    // FIXME 출력 로직 수정 필요!
     public static void printResult(Map<ScoreEnum, Integer> scoreEnumIntegerMap) {
         StringBuilder stringBuilder = new StringBuilder();
         if (scoreEnumIntegerMap.get(ScoreEnum.BALL) != 0) { // FIXME 비었는지 결과 출력하도록 메시지 전달 -> scoreEnumIntegerMap 도 일급 컬렉션으로 만듦
@@ -22,11 +23,15 @@ public class ResultView {
             stringBuilder.append(scoreEnumIntegerMap.get(ScoreEnum.STRIKE)).append("스트라이크");
         }
 
-        // TODO 출력 결과 추가, 랜덤값 중복되지 않도록!!!
+        if (scoreEnumIntegerMap.get(ScoreEnum.NONE) == 3) {
+            stringBuilder.append("낫싱");
+        }
+
         System.out.println(stringBuilder);
     }
 
     public static void printDone() {
-        System.out.println("3개의 숫자를 모두 맞히셨습니다!");
+        System.out.print("3개의 숫자를 모두 맞히셨습니다!");
+        System.out.println(" 게임 종료");
     }
 }

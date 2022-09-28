@@ -31,7 +31,7 @@ public class Result {
     }
 
     private int initial() {
-        return Randoms.pickNumberInRange(1, 9);
+        return Randoms.pickNumberInRange(1, 9); // TODO pickNumberInList를 사용하는것이 나을지? 아니면 pickNumberInRange를 사용하는 것이 좋은지 고민!
     }
 
     public static Result getCachedResult(int resultNumber) {

@@ -2,11 +2,21 @@ package baseball.number;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class Results {
+    private static final int MAX_NUMBER = 9;
+    private static final List<Integer> PICKABLE_NUMBER = Collections.unmodifiableList(new ArrayList<Integer>(){
+        {
+            for (int i = 1; i <= MAX_NUMBER; i++) {
+                add(i);
+            }
+        }
+    });
+
 
     private final List<Result> resultList;
 
