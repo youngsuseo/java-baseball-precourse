@@ -2,9 +2,10 @@ package baseball.number;
 
 import java.util.Objects;
 
+import static baseball.number.NumberConstant.MAXIMUM_NUMBER;
+import static baseball.number.NumberConstant.MINIMUM_NUMBER;
+
 public class Number {
-    private static final int MINIMUM_NUMBER = 1;
-    private static final int MAXIMUM_NUMBER = 9;
 
     private final int number;
 

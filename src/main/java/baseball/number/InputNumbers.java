@@ -3,9 +3,9 @@ package baseball.number;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InputNumbers {
-    private static final int COUNT_OF_NUMBERS = 3;
+import static baseball.number.NumberConstant.COUNT_OF_NUMBERS;
 
+public class InputNumbers {
     private final List<InputNumber> inputNumberList;
 
     public InputNumbers(String inputData) {
