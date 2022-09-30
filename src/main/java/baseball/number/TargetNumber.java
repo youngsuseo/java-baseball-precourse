@@ -2,19 +2,19 @@ package baseball.number;
 
 import java.util.Objects;
 
-public class InputNumber {
+public class TargetNumber {
 
     private final Number number;
 
-    public InputNumber(String inputData) {
-        this(Integer.parseInt(inputData));
+    public TargetNumber(String targetNumberString) {
+        this(Integer.parseInt(targetNumberString));
     }
 
-    public InputNumber(int inputNumber) {
-        this(new Number(inputNumber));
+    public TargetNumber(int targetNumber) {
+        this(new Number(targetNumber));
     }
 
-    public InputNumber(Number number) {
+    public TargetNumber(Number number) {
         this.number = number;
     }
 
@@ -22,7 +22,7 @@ public class InputNumber {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        InputNumber that = (InputNumber) o;
+        TargetNumber that = (TargetNumber) o;
         return Objects.equals(number, that.number);
     }
 
