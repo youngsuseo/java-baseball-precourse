@@ -16,6 +16,15 @@ public class TargetNumbers {
         }
     }
 
+    public TargetNumbers(String numbers) {
+        targetNumberList = new ArrayList<>();
+
+        String[] splitNumbers = numbers.split("");
+        for (String splitNumber : splitNumbers) {
+            targetNumberList.add(new TargetNumber(splitNumber));
+        }
+    }
+
     public List<TargetNumber> getTargetNumberList() {
         return targetNumberList;
     }

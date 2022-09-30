@@ -1,5 +1,6 @@
 package baseball.number;
 
+import baseball.score.Score;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -22,9 +23,9 @@ public class InputNumbersTest {
         Assertions.assertThat(inputNumberList).hasSize(3);
 
         assertAll(
-                () -> assertEquals(inputNumberList.get(0), new InputNumber(1)),
-                () -> assertEquals(inputNumberList.get(1), new InputNumber(2)),
-                () -> assertEquals(inputNumberList.get(2), new InputNumber(3))
+                () -> assertEquals(inputNumberList.get(0), new InputNumber(0, 1)),
+                () -> assertEquals(inputNumberList.get(1), new InputNumber(1, 2)),
+                () -> assertEquals(inputNumberList.get(2), new InputNumber(2, 3))
         );
     }
 
@@ -34,5 +35,20 @@ public class InputNumbersTest {
     void constructWithInvalidDataLength(String inputData) {
         assertThatThrownBy(() -> new InputNumbers(inputData)).isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("3개의 숫자를 입력해주세요.");
+    }
+
+    @DisplayName("InputNumbers값을 전달하여 match된 값을 확인한다.")
+    @Test
+    void match() {
+        TargetNumbers targetNumbers = new TargetNumbers("123");
+
+        InputNumbers inputNumbers = new InputNumbers("234");
+        List<Score> match = inputNumbers.match(targetNumbers);
+
+        assertAll(
+                () -> Assertions.assertThat(match.get(0)).isEqualTo(Score.BALL),
+                () -> Assertions.assertThat(match.get(1)).isEqualTo(Score.BALL),
+                () -> Assertions.assertThat(match.get(2)).isEqualTo(Score.NOTHING)
+        );
     }
 }

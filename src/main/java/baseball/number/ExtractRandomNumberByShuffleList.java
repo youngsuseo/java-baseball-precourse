@@ -7,7 +7,6 @@ import java.util.List;
 import static baseball.number.NumberConstant.*;
 
 public class ExtractRandomNumberByShuffleList implements ExtractNumberStrategy {
-    private static final int INITIAL_INDEX = 0;
 
     @Override
     public List<Integer> extract() {
