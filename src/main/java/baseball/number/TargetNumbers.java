@@ -1,5 +1,7 @@
 package baseball.number;
 
+import baseball.number.strategy.ExtractNumberStrategy;
+
 import java.util.ArrayList;
 import java.util.List;
 

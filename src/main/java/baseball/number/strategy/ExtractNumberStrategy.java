@@ -1,4 +1,4 @@
-package baseball.number;
+package baseball.number.strategy;
 
 import java.util.List;
 

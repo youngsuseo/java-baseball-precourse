@@ -1,5 +1,6 @@
 package baseball.number;
 
+import baseball.number.strategy.ExtractRandomNumberByPickNumber;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

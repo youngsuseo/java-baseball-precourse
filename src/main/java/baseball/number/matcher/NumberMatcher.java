@@ -1,5 +1,7 @@
-package baseball.number;
+package baseball.number.matcher;
 
+import baseball.number.InputNumbers;
+import baseball.number.TargetNumbers;
 import baseball.score.Score;
 import baseball.score.Scores;
 
