@@ -1,8 +1,10 @@
 package baseball.number;
 
 import baseball.score.Score;
+import baseball.score.Scores;
 
 import java.util.List;
+import java.util.Map;
 
 public class NumberMatcher {
 
@@ -14,7 +16,13 @@ public class NumberMatcher {
         this.inputNumbers = inputNumbers;
     }
 
-    public List<Score> match() {
+    public Map<Score, Integer> matchedResult() {
+        List<Score> matchedScore = match();
+        Scores scores = new Scores(matchedScore);
+        return scores.getScoreIntegerMap();
+    }
+
+    List<Score> match() {
         return inputNumbers.match(targetNumbers);
     }
 }
