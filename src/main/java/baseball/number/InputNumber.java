@@ -37,16 +37,20 @@ public class InputNumber {
     }
 
     private boolean isStrike(List<TargetNumber> targetNumberList) {
-        return targetNumberList.get(index.getIndex()).equals(TargetNumber.getCachedTargetNumber(number));
+        return equalsWithInputNumber(targetNumberList.get(index.getIndex()));
     }
 
     private boolean isBall(List<TargetNumber> targetNumberList) {
         for (TargetNumber targetNumber : targetNumberList) {
-            if (targetNumber.equals(TargetNumber.getCachedTargetNumber(number))) {
+            if (equalsWithInputNumber(targetNumber)) {
                 return true;
             }
         }
         return false;
+    }
+
+    private boolean equalsWithInputNumber(TargetNumber targetNumber) {
+        return TargetNumber.getCachedTargetNumber(number).equals(targetNumber);
     }
 
     @Override

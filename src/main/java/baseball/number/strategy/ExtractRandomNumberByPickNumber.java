@@ -13,11 +13,16 @@ public class ExtractRandomNumberByPickNumber implements ExtractNumberStrategy {
     public List<Integer> extract() {
         List<Integer> integers = new ArrayList<>();
         while (integers.size() < COUNT_OF_NUMBERS) {
-            int randomNumber = Randoms.pickNumberInRange(MINIMUM_NUMBER, MAXIMUM_NUMBER);
-            if (!integers.contains(randomNumber)) {
-                integers.add(randomNumber);
-            }
+            add(integers);
         }
         return integers;
+    }
+
+    private void add(List<Integer> integers) {
+        int randomNumber = Randoms.pickNumberInRange(MINIMUM_NUMBER, MAXIMUM_NUMBER);
+        if (integers.contains(randomNumber)) {
+            return;
+        }
+        integers.add(randomNumber);
     }
 }
